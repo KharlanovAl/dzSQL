@@ -23,6 +23,10 @@ public class LoginPage {
     }
 
     public void login(DataHelper.AuthInfo info) {
+        // очистка полей
+        loginField.clear();
+        passwordField.clear();
+
         loginField.setValue(info.getLogin());
         passwordField.setValue(info.getPassword());
         loginButton.click();

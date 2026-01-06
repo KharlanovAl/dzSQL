@@ -1,9 +1,9 @@
 package ru.Netology.banklogintest.page;
-
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.mysql.cj.x.protobuf.Mysqlx;
 
 import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class VerificationPage {
@@ -12,11 +12,11 @@ public class VerificationPage {
     private final SelenideElement errorNotification = $("[data-test-id=error-notification] .notification__content");
 
     public VerificationPage() {
-        codeField.shouldBe(Condition.visible);
+        codeField.shouldBe(visible);
     }
 
     public void verifyErrorNotification(String expectedText) {
-        errorNotification.shouldHave(exactText(expectedText)).shouldBe(Condition.visible);
+        errorNotification.shouldHave(exactText(expectedText)).shouldBe(visible);
     }
 
     public DashboardPage validVerify(String verificationCode) {
