@@ -42,7 +42,6 @@ public class BankLoginTest {
 //
         @Test
         void shouldBlockUserAfterThreeInvalidPasswordAttempts() {
-            loginPage.login(authInfo);
             var authInfo = DataHelper.getAuthInfoWithTestData();
 
             // Три попытки с неверным паролем для пользователя vasya
@@ -74,7 +73,7 @@ public class BankLoginTest {
 
         @Test
         void shouldShowErrorWithInvalidLogin() {
-            loginPage.login(authInfo);
+
             // полностью случайный пользователь
             var invalidAuthInfo = DataHelper.generateRandomUser();
             loginPage.login(invalidAuthInfo);

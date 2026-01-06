@@ -2,6 +2,7 @@ package ru.Netology.banklogintest.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 import ru.Netology.banklogintest.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -24,8 +25,8 @@ public class LoginPage {
 
     public void login(DataHelper.AuthInfo info) {
         // очистка полей
-        loginField.clear();
-        passwordField.clear();
+        loginField.press(Keys.chord(Keys.CONTROL, Keys.BACK_SPACE));
+        passwordField.press(Keys.chord(Keys.CONTROL, Keys.BACK_SPACE));
 
         loginField.setValue(info.getLogin());
         passwordField.setValue(info.getPassword());
